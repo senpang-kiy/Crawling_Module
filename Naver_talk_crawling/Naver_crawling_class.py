@@ -166,10 +166,10 @@ class Naver_crawling:
         now = datetime.datetime.now()
         start = time.time()  # 시작 시간 저장
 
-        HOSTNAME = '172.31.20.198'
+        HOSTNAME = 'Ip'
         PORT = 27017
-        username = urllib.parse.quote_plus('test')
-        password = urllib.parse.quote_plus('test12!@')
+        username = urllib.parse.quote_plus('ID')
+        password = urllib.parse.quote_plus('PW')
         connection = pymongo.MongoClient('mongodb://%s:%s@%s:%s/' % (username, password, HOSTNAME, PORT))
         DB = connection['test_talk_03']
         DB_insert = DB['naver_talks']

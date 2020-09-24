@@ -203,10 +203,10 @@ class sector_classification:
         import urllib
         logger.start('mongoDB insert start')
         # DB init
-        HOSTNAME = '172.31.20.198'
-        PORT = 27017
-        username = urllib.parse.quote_plus('test')
-        password = urllib.parse.quote_plus('test12!@')
+        HOSTNAME = 'IP'
+        PORT = int(port)
+        username = urllib.parse.quote_plus('ID')
+        password = urllib.parse.quote_plus('PW')
         connection = pymongo.MongoClient('mongodb://%s:%s@%s:%s/' % (username, password, HOSTNAME, PORT))
         DB = connection['test_seibro']
         DB_insert = DB['FICS_data']

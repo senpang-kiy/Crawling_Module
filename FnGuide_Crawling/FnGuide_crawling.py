@@ -376,11 +376,11 @@ def page3_parsing(page3, result, event_code, event_name):
 
 def mongoDB_insert(values):
     # DB init
-    HOSTNAME = '54.180.91.199'
-    #HOSTNAME = '172.31.20.198'
-    PORT = 27017
-    username = urllib.parse.quote_plus('test')
-    password = urllib.parse.quote_plus('test12!@')
+    HOSTNAME = 'ip'
+    #HOSTNAME = 'ip'
+    PORT = int(port)
+    username = urllib.parse.quote_plus('id')
+    password = urllib.parse.quote_plus('pw')
     connection = pymongo.MongoClient('mongodb://%s:%s@%s:%s/' % (username, password, HOSTNAME, PORT))
     DB = connection['FnGuide_Crawling']
     DB_insert = DB['Fngide_Crawling_test2']
@@ -412,12 +412,12 @@ def MariaDB_insert(DataFrame, MariaDB_table_name):
     value = '%s, ' * columns_num
     # DB Connection Setting
     conn = pymysql.connect(
-        host="database-1.c1pvc7savwst.ap-northeast-2.rds.amazonaws.com",
-        user="nsuser",
-        passwd="nsuser))))",
-        database="NewsSalad_dev_01",
-        charset='utf8'
-    )
+        host="(host(url or ip)",
+        user="ID",
+        passwd="PW",
+        database="table_name",
+        charset='utf8')
+
     curs = conn.cursor(pymysql.cursors.DictCursor)
     vals = tuple([tuple(x) for x in DataFrame.values])
 

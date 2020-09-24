@@ -4,10 +4,10 @@ import pymysql
 
 def drop_table(table_name):
     dbconn = pymysql.connect(
-        host="database-1.c1pvc7savwst.ap-northeast-2.rds.amazonaws.com",
-        user="nsuser",
-        passwd="nsuser))))",
-        database="NewsSalad_dev_01",
+        host="(host(url or ip)",
+        user="ID",
+        passwd="PW",
+        database="table_name",
         charset='utf8')
 
     try:
@@ -34,12 +34,12 @@ def MariaDB_insert(DataFrame, MariaDB_table_name):
     value = '%s, ' * columns_num
     # DB Connection Setting
     conn = pymysql.connect(
-        host="database-1.c1pvc7savwst.ap-northeast-2.rds.amazonaws.com",
-        user="nsuser",
-        passwd="nsuser))))",
-        database="NewsSalad_dev_01",
-        charset='utf8'
-    )
+        host="(host(url or ip)",
+        user="ID",
+        passwd="PW",
+        database="table_name",
+        charset='utf8')
+
     curs = conn.cursor(pymysql.cursors.DictCursor)
     vals = tuple([tuple(x) for x in DataFrame.values])
 
